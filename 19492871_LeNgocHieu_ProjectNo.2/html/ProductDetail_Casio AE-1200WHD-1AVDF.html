@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <!-- MDB -->
+    <link rel="stylesheet" href="../css/mdb.min.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Other -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/mdb.min.js"></script>
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Custom jQuery Script -->
+    <script>
+        $(document).ready(function () {
+          var Quantity = 1;
+          function click() {
+            $("#valInc").click(function (e) {
+              Quantity++
+            })
+            $("#valDec").click(function (e) {
+              if (Quantity == 1) {
+                Quantity
+              }
+              if (Quantity > 1) {
+                Quantity--
+              }
+            })
+          }
+          function type() {
+            var Quantity = $("#soluongsp").val()
+            if (Quantity < 1) {
+              Quantity = 1
+            }
+            else {
+              Quantity
+            }
+          }
+          function import_quantity() {
+            $("#soluongsp").html(Quantity)
+          }  
+        })
+    </script>
+    <!-- Custom jQuery Script -->
+</head>
+<body>
+    <!--Main Navigation-->
+<header>
+  <!-- Jumbotron -->
+  <div class="p-3 text-center bg-white border-bottom">
+    <div class="container">
+      <div class="row gy-3">
+        <!-- Left elements -->
+        <div class="col-lg-2 col-sm-4 col-4">
+          <a href="../html/Homepage.html" target="_blank" class="float-start">
+            <img src="../img/Logo.png" height="80" />
+          </a>
+        </div>
+        <!-- Left elements -->
+
+        <!-- Center elements -->
+        <div class="order-lg-last col-lg-5 col-sm-8 col-8">
+          <div class="d-flex float-end">
+            <a href="../html/Login.html" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fas fa-user-alt m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Login</p> </a>
+            <a href="../html/Signup.html" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fas fa-heart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Sign up</p> </a>
+          </div>
+        </div>
+        <!-- Center elements -->
+
+        <!-- Right elements -->
+        <div class="col-lg-5 col-md-12 col-12">
+          <div class="input-group float-center">
+            <div class="form-outline">
+              <input type="search" id="form1" class="form-control" />
+              <label class="form-label" for="form1">Search</label>
+            </div>
+            <button type="button" class="btn btn-primary shadow-0">
+              <i class="fas fa-search">Search</i>
+            </button>
+          </div>
+        </div>
+        <!-- Right elements -->
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <!-- Container wrapper -->
+    <div class="container justify-content-center justify-content-md-between">
+      <!-- Toggle button -->
+      <button
+              class="navbar-toggler border py-2 text-dark"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#navbarLeftAlignExample"
+              aria-controls="navbarLeftAlignExample"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-dark" aria-current="page" href="../html/Homepage.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#">Customer Support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#">Maintenance Policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#">About</a>
+          </li>
+          <!-- Navbar dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              Brands
+            </a>
+            <!-- Dropdown menu -->
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="../html/ListingView_Casio.html">Casio</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../html/ListingView_PierreLannier.html">Pierre Lannier</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</header>
+<!-- Main -->
+  <div class="container">
+    <!--Row 1-->
+    <div class="row">
+      <div class="bg-primary mb-4">
+        <div class="container py-4">
+          <h3 class="text-white mt-2">Casio AE-1200WHD-1AVDF</h3>
+          <!-- Breadcrumb -->
+          <nav class="d-flex mb-2">
+            <h6 class="mb-0">
+              <a href="../html/Homepage.html" class="text-white">Home</a>
+              <span class="text-white-50 mx-2"> > </span>
+              <a href="" class="text-white-50">Brands</a>
+              <span class="text-white-50 mx-2"> > </span>
+              <a href="../html/ListingView_Casio.html" class="text-white"><u>Casio</u></a>
+              <span class="text-white-50 mx-2"> > </span>
+              <a href="../html/ProductDetail_Casio AE-1200WHD-1AVDF.html" class="text-white"><u>Detail</u></a>
+            </h6>
+          </nav>
+          <!-- Breadcrumb -->
+        </div>
+      </div>
+    </div>
+    <!--Row 2-->
+    <section class="py-5">
+      <div class="container">
+        <div class="row gx-5">
+          <aside class="col-lg-6">
+            <div class="border rounded-4 mb-3 d-flex justify-content-center">
+              <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="../html/ProductDetail_Casio AE-1200WHD-1AVDF.html">
+                <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="../img/Casio/AE-1200WHD01AVDF.jpg" />
+              </a>
+            </div>
+            <!-- gallery-wrap.end// -->
+          </aside>
+          <main class="col-lg-6">
+            <div class="ps-lg-3">
+              <h4 class="title text-dark">
+                Casio AE-1200WHD-1AVDF <br />
+                Casio
+              </h4>
+              <div class="mb-3">
+                <span class="h5">VND 1.373.000</span>
+              </div>
+              <!-- Desc -->
+              <p>
+                Casio AE-1200WHD-1AVDF một trong những chiếc đồng hồ bán chạy nhất của thương hiệu Casio Việt Nam nói chung và của ThegioiDongHo.com nói riêng nhờ vào vẻ ngoài trẻ trung, năng động và cá tính. Ngoài ra, tính đa năng về thời gian cũng góp phần giúp chiếc đồng hồ này chinh phục hàng ngàn bạn trẻ Việt.
+              </p>
+              <!-- Desc -->
+              <!-- Info -->
+              <div class="row">
+                <dt class="col-3">Machine Type:</dt>
+                <dd class="col-9">Quartz</dd>
+    
+                <dt class="col-3">Glass Type:</dt>
+                <dd class="col-9">Mineral Crystal</dd>
+    
+                <dt class="col-3">Water Resistance</dt>
+                <dd class="col-9">10 atm</dd>
+    
+                <dt class="col-3">Brand</dt>
+                <dd class="col-9">Casio - Japan</dd>
+              </div>
+              <!-- Info -->
+              <hr />
+              <div class="row mb-4">
+                <!-- col.// -->
+                <div class="col-md-4 col-6 mb-3">
+                  <label class="mb-2 d-block">Quantity</label>
+                  <div class="input-group mb-3" style="width: 170px;">
+                    <button class="btn btn-white border border-secondary px-3" type="button" id="valInc" data-mdb-ripple-color="dark">
+                      <i class="fas fa-minus">-</i>
+                    </button>
+                    <input type="text" class="form-control text-center border border-secondary" placeholder="1" aria-label="Example text with button addon" aria-describedby="button-addon1" id="soluongsp"/>
+                    <button class="btn btn-white border border-secondary px-3" type="button" id="valDec" data-mdb-ripple-color="dark">
+                      <i class="fas fa-plus">+</i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="btn btn-warning shadow-0"> Buy now </a>
+              <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
+              <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i class="me-1 fa fa-heart fa-lg"></i> Save </a>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+  </div>
+<!-- Main -->
+
+<!-- Feature -->
+<section class="mt-5" style="background-color: #f5f5f5;">
+  <div class="container text-dark pt-3">
+    <header class="pt-4 pb-3">
+      <h3>Why choose us</h3>
+    </header>
+
+    <div class="row mb-4">
+      <div class="col-lg-4 col-md-6">
+        <figure class="d-flex align-items-center mb-4">
+          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+            <i class="fas fa-camera-retro fa-2x fa-fw text-primary floating"></i>
+          </span>
+          <figcaption class="info">
+            <h6 class="title">Reasonable prices with Best quality</h6>
+            <p>We directly import the products from famous watch company and from the rerliable retailer</p>
+          </figcaption>
+        </figure>
+        <!-- itemside // -->
+      </div>
+      <!-- col // -->
+      <div class="col-lg-4 col-md-6">
+        <figure class="d-flex align-items-center mb-4">
+          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+            <i class="fas fa-star fa-2x fa-fw text-primary floating"></i>
+          </span>
+          <figcaption class="info">
+            <h6 class="title">Best service</h6>
+            <p>We'll deliver best service to each customer with a lot of care when you buy our goods</p>
+          </figcaption>
+        </figure>
+        <!-- itemside // -->
+      </div>
+      <!-- col // -->
+      <div class="col-lg-4 col-md-6">
+        <figure class="d-flex align-items-center mb-4">
+          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+            <i class="fas fa-plane fa-2x fa-fw text-primary floating"></i>
+          </span>
+          <figcaption class="info">
+            <h6 class="title">Best staff</h6>
+            <p>We have a lot of staff not only do as a advisor, we can also have specialist staff for repair and maintenance the watch</p>
+          </figcaption>
+        </figure>
+        <!-- itemside // -->
+      </div>
+    </div>
+  </div>
+  <!-- container end.// -->
+</section>
+<!-- Feature -->
+</body>
+</html>
+
+  
