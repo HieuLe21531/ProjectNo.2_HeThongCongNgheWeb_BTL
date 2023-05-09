@@ -17,74 +17,55 @@
     <!-- Custom jQuery Script -->
     <script>
       $(document).ready(function () {
-        //Input
-        let email_input = $("#email_input").val();
-        let loginname_input = $("#loginname_input").val();
-        let pw_input = $("#pw_input").val();
-        let re_pw_input = $("#re_pw_input").val();
-        //Span
-        let email_span_T = $("#email_span").html("*");
-        let email_span_F = $("#email_span").html("Email voi dinh dang <someone>@gmail|yahoo|outlook.com");
-        let loginname_span_T = $("#loginname_span").html("*");
-        let loginname_span_F = $("#loginname_span").html("Chu cai dau viet hoa");
-        let pw_span_T = $("#pw_span").html("*");
-        let pw_span_F = $("#pw_span").html("Ky tu gom a-z;A-Z;0-9 va khoang cach, it nhat 8 ky tu");
-        let re_pw_span_T = $("#re_pw_span").html("*");
-        let re_pw_span_F = $("#re_pw_span").html("Khong trung voi mat khau goc");
-        //FunctionList
-        //KT_Email
+        ///KT_Email
         function KTEmail() {
-          let email_regex = /^[a-zA-Z0-9]{1,}@((gmail)|(yahoo)|(outlook))(.com)$/
-          if(email_regex.test(email_input)) {
-            email_span_T;
+          let email_regex = /^[a-zA-Z0-9]{1,}@((gmail)|(yahoo)|(outlook))(.com)$/;
+          if (email_regex.test($("#email_input").val())) {
+            $("#email_span").html("*");
             return true;
-          }
-          else {
-            email_span_F;
+          } else {
+            $("#email_span").html("Email voi dinh dang <someone>@gmail|yahoo|outlook.com",);
             return false;
           }
         }
-        $("#email_input").blur(function (e) {KTEmail()});
+        $("#email_input").blur(KTEmail);
         //KT_Ten
         function KTTen() {
-          let loginname_regex = /^([A-Z]{1}[a-zA-Z ]{0,}){1,}$/
-          if(loginname_regex.test(loginname_input))
+          let lgname_regex = /^([A-Z]{1}[a-zA-Z ]{0,}){1,}$/
+          if(lgname_regex.test($("#lgname_input").val()))
           {
-            loginname_span_T;
+            $("#lgname_span").html("*");
             return true;
           }
           else 
           {
-            loginname_span_F;
+            $("#lgname_span").html("Chu cai dau phai viet hoa");
             return false;
           }
         }
-        $("#loginname_input").blur(function (e) {KTTen()});
+        $("#lgname_input").blur(function (e) {KTTen()});
         //KT_Password
         function KTPassword() {
-          let pw_regex = /^[A-Za-z0-9 !]{8,}$/
-          if(pw_regex.test(pw_input)) 
-          {
-            pw_span_T;
-            return true;
+          let pw_regex = /^[a-zA-Z0-9 ]{8,}$/;
+          if (pw_regex.test($("#pw_input").val())) {
+              $("#pw_span").html("*");
+                return true;
+          } else {
+              $("#pw_span").html("Ky tu gom a-z hoac A-Z hoac 0-9 va khoang cach, it nhat 8 ky tu",);
+              return false;
           }
-          else
-          {
-            pw_span_F;
-            return false;
-          }
-        }
-        $("#pw_input").blur(function (e)  {KTPassword()});
+         }
+        $("#pw_input").blur(KTPassword);
         //KT_Re-Password
         function KTRePassword() {
           if(pw_input.test(re_pw_input))
           {
-            re_pw_span_T;
+            $("#re_pw_span").html("*");
             return true;
           }
           else
           {
-            re_pw_span_F;
+            $("#re_pw_span").html("Yeu cau nhap dung voi mat khau nhu tren");
             return false;
           }
         }
@@ -166,7 +147,10 @@
             <a class="nav-link text-dark" href="#">Maintenance Policy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">About</a>
+            <a class="nav-link text-dark" href="../html/About.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="../html/Cart.html">Your Cart</a>
           </li>
           <!-- Navbar dropdown -->
           <li class="nav-item dropdown">
@@ -208,9 +192,9 @@
             <span id="email_span" class="text-danger">*</span>
           </div>
           <div class="form-group">
-            <label for="Email">Login Name</label>
-            <input type="text" id="loginname_input" class="form-control" placeholder="Enter name">
-            <span id="loginname_span" class="text-danger">*</span>
+            <label for="Name">Login Name</label>
+            <input type="text" id="lgname_input" class="form-control" placeholder="Enter name">
+            <span id="lgname_span" class="text-danger">*</span>
           </div>
           <div class="form-group">
             <label for="Password">Password</label>

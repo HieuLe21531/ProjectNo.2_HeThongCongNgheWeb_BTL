@@ -17,17 +17,19 @@
     <!-- Custom jQuery Script -->
     <script>
         $(document).ready(function () {
-          var Quantity = 1;
+          function setQuantity() {
+            var Quantity = 1;
+          }
           function click() {
             $("#valInc").click(function (e) {
-              Quantity++
+              Quantity = Quantity +1
             })
             $("#valDec").click(function (e) {
               if (Quantity == 1) {
                 Quantity
               }
               if (Quantity > 1) {
-                Quantity--
+                Quantity = Quantity - 1
               }
             })
           }
@@ -41,7 +43,8 @@
             }
           }
           function import_quantity() {
-            $("#soluongsp").html(Quantity)
+            $("#soluongsp").change(Quantity)
+            return true;
           }  
         })
     </script>
@@ -120,7 +123,10 @@
             <a class="nav-link text-dark" href="#">Maintenance Policy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">About</a>
+            <a class="nav-link text-dark" href="../html/About.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="../html/Cart.html">Your Cart</a>
           </li>
           <!-- Navbar dropdown -->
           <li class="nav-item dropdown">

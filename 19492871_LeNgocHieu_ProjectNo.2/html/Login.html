@@ -16,45 +16,32 @@
     <script src="../js/bootstrap.min.js"></script>
     <!-- Custom jQuery Script -->
     <script>
-      $(document).ready(function (){
-        //Input
-        let email_input = $("#email_input").val(); 
-        let pw_input = $("#pw_input").val();
-        //Span
-        let email_span_T = $("#email_span").html("*");
-        let email_span_F = $("#email_span").html("Email voi dinh dang <someone>@gmail|yahoo|outlook.com");
-        let pw_span_T = $("#pw_span").html("*");
-        let pw_span_F = $("#pw_span").html("Ky tu gom a-z;A-Z;0-9 va khoang cach, it nhat 8 ky tu");
-        //FunctionList
-        //KT_Email
-        function KTEmail() {
-          let email_regex = /^[a-zA-Z0-9]{1,}@((gmail)|(yahoo)|(outlook))(.com)$/
-          if(email_regex.test(email_input)) {
-            email_span_T;
-            return true;
+      $(document).ready(function () {
+          //KT_Email
+          function KTEmail() {
+            let email_regex = /^[a-zA-Z0-9]{1,}@((gmail)|(yahoo)|(outlook))(.com)$/;
+            if (email_regex.test($("#email_input").val())) {
+              $("#email_span").html("*");
+              return true;
+            } else {
+              $("#email_span").html("Email voi dinh dang <someone>@gmail|yahoo|outlook.com",);
+              return false;
+            }
           }
-          else {
-            email_span_F;
-            return false;
+          $("#email_input").blur(KTEmail);
+          //KT_Password
+          function KTPassword() {
+            let pw_regex = /^[a-zA-Z0-9 ]{8,}$/;
+            if (pw_regex.test($("#pw_input").val())) {
+                $("#pw_span").html("*");
+                 return true;
+            } else {
+                $("#pw_span").html("Ky tu gom a-z hoac A-Z hoac 0-9 va khoang cach, it nhat 8 ky tu",);
+                  return false;
+            }
           }
-        }
-        $("#email_input").blur(function (e) {KTEmail()});
-        //KT_Password
-        function KTPassword() {
-          let pw_regex = /^[A-Za-z0-9 !]{8,}$/
-          if(pw_regex.test(pw_input)) 
-          {
-            pw_span_T;
-            return true;
-          }
-          else
-          {
-            pw_span_F;
-            return false;
-          }
-        }
-        $("#pw_input").blur(function (e)  {KTPassword()});
-      })
+          $("#pw_input").blur(KTPassword);
+      });
     </script>
     <!-- Custom jQuery Script -->
 </head>
@@ -131,7 +118,10 @@
             <a class="nav-link text-dark" href="#">Maintenance Policy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">About</a>
+            <a class="nav-link text-dark" href="../html/About.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="../html/Cart.html">Your Cart</a>
           </li>
           <!-- Navbar dropdown -->
           <li class="nav-item dropdown">
