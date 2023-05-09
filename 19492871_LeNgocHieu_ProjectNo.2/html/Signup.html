@@ -43,7 +43,7 @@
             return false;
           }
         }
-        $("#lgname_input").blur(function (e) {KTTen()});
+        $("#lgname_input").blur(KTTen);
         //KT_Password
         function KTPassword() {
           let pw_regex = /^[a-zA-Z0-9 ]{8,}$/;
@@ -58,18 +58,20 @@
         $("#pw_input").blur(KTPassword);
         //KT_Re-Password
         function KTRePassword() {
-          if(pw_input.test(re_pw_input))
-          {
-            $("#re_pw_span").html("*");
-            return true;
-          }
-          else
+          var pw_input = $("#pw_input").val();
+          var re_pw_input = $("#re_pw_input").val();
+          if(pw_input != re_pw_input)
           {
             $("#re_pw_span").html("Yeu cau nhap dung voi mat khau nhu tren");
             return false;
           }
+          else
+          {
+            $("#re_pw_span").html("*");
+            return true;
+          }
         }
-        $("#re_pw_input").blur(function (e) {KTRePassword()});
+        $("#re_pw_input").keyup(KTRePassword)
       })
     </script>
     <!-- Custom jQuery Script -->
@@ -185,7 +187,7 @@
             <h3>Sign up</h3>
           </div>
         </div>
-        <form>
+        <form id="signup">
           <div class="form-group">
             <label for="Email">Email</label>
             <input type="text" id="email_input" class="form-control" placeholder="Enter email">
