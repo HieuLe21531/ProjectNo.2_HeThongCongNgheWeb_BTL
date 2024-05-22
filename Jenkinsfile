@@ -7,5 +7,10 @@ pipeline {
                 sh 'mvn --version'
             }
         }
+        post {
+            always {
+                junit 'build/reports/**/*.xml'
+            }
+        }
     }
 }
